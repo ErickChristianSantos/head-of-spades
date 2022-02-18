@@ -1,0 +1,403 @@
+class color:
+    PURPLE = '\033[95m'
+    CYAN = '\033[96m'
+    DARKCYAN = '\033[36m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    END = '\033[0m'
+
+from datetime import datetime
+currenttime = datetime.now()
+dt_string = currenttime.strftime("%D/%m/%Y %H:%M:%S")
+
+
+
+global totalorder
+totalorder = ''
+
+
+def order(strings):
+    global totalorder
+    totalorder += strings
+
+
+def calculatetotalbill(order):
+    global totalbill
+    totalbill += order
+
+
+def Receipt():
+    print("\n-------------------------------------------------------------------")
+    print("\n                             " + color.BOLD +"RECEIPT"+color.END+"                             \n")
+    print("                         Store: FILI DISH")
+    print("                   Store number: +63987654321")
+    print("         Address: Block 7.9b Lot. 79Ph. Asia Village World City")
+    print("              Date and Time: ", dt_string)
+
+    print("\n-------------------------------------------------------------------")
+    print("Thank you for eating with us! Come again at " +color.BOLD + color.GREEN + color.UNDERLINE + "FILI DISH!\n" + color.END)
+    print(totalorder)
+
+
+global totalbill
+totalbill = 0
+
+
+def printtotalbill():
+    global totalbill
+    return totalbill
+
+def comebackagaintoFILIDISH():
+    print("But thank you for coming! Come again at " +color.BOLD + color.GREEN + color.UNDERLINE + "FILI DISH!\n" + color.END + "if you want to eat with us.")
+    print("Date and Time issued: ", dt_string)
+    print("\n-------------------------------------------------------------------")
+
+def goodbye():
+    print("\n-------------------------------------------------------------------")
+    print("We are sad to see you go without food...")
+
+
+aTapa = 75.00
+aSausage = 80.00
+aPancake = 50.00
+aPandesal = 45.00
+aGrilledcheese = 45.00
+
+bSinigang = 200.00
+bChicken = 250.00
+bBeefsteak = 200.00
+bAdobo = 200.00
+bKareKare = 200.00
+bNilaga = 200.00
+
+cLecheFlan = 75.00
+cHaloHalo = 70.00
+cUbeHalaya = 70.00
+cSapinSapin = 65.00
+cTuron = 60.00
+cBibingka = 60.00
+
+dBukopandan = 80.00
+dMestiza = 80.00
+dCoffeeLiquer = 80.00
+dHotChocolate = 80.00
+dMangoShake = 80.00
+dCokeFloat = 80.00
+dWater = 40.00
+
+
+print("\n                   Good day, Customer! ")
+print("                  "+color.BOLD + color.GREEN + color.UNDERLINE + "Welcome to FILI DISH!\n" + color.END)
+print("\n          This is the list of our todays menu: \n")
+
+print(color.BOLD + color.PURPLE + " Breakfast meals" + color.END)
+print(" 1. TAPA WITH RICE               ------------------------  ₱75.00 ")
+print(" 2. SAUSAGE WITH RICE            ------------------------  ₱80.00 ")
+print(" 3. PANCAKE                      ------------------------  ₱50.00 ")
+print(" 4. PANDESAL                     ------------------------- ₱45.00 ")
+print(" 5. GRILLED CHEESE SANDWICH      ------------------------- ₱45.00 ")
+print(1 * "\n")
+print(color.BOLD + color.PURPLE + " Main courses: " + color.END)
+print(" 1. SINIGANG                     ------------------------- ₱200.00 ")
+print(" 2. CHICKEN                      ------------------------- ₱250.00 ")
+print(" 3. BEEF STEAK                   ------------------------- ₱200.00 ")
+print(" 4. ADOBO                        ------------------------- ₱200.00 ")
+print(" 5. NILAGA                       ------------------------- ₱200.00 ")
+print(" 6. KARE-KARE                    ------------------------- ₱200.00 ")
+print(1 * "\n")
+print(color.BOLD + color.PURPLE + " Desserts: " + color.END)
+print(" 1. LECHE-FLAN                   ------------------------- ₱75.00 ")
+print(" 2. HALO-HALO                    ------------------------- ₱70.00 ")
+print(" 3. UBE HALAYA                   ------------------------- ₱70.00 ")
+print(" 4. SAPIN-SAPIN                  ------------------------- ₱65.00 ")
+print(" 5. TURON                        ------------------------- ₱60.00 ")
+print(" 6. BIBINGKA                     ------------------------- ₱60.00 ")
+print(1 * "\n")
+print(color.BOLD + color.PURPLE + " Drinks: " + color.END)
+print(" 1. BUKO PANDAN JUICE            ------------------------- ₱80.00 ")
+print(" 2. MESTIZA                      ------------------------- ₱80.00 ")
+print(" 3. COFFEE LIQUER                ------------------------- ₱80.00 ")
+print(" 4. HOT CHOCOLATE                ------------------------- ₱80.00 ")
+print(" 5. MANGO SHAKE                  ------------------------- ₱80.00 ")
+print(" 6. COKE FLOAT                   ------------------------- ₱80.00 ")
+print(" 7. WATER                        ------------------------- ₱40.00 ")
+
+
+def choices():
+    print(1 * "\n")
+    print(" Kindly: ")
+    print(" Press " + color.BOLD + color.GREEN + "1 " + color.END + "if " + color.BOLD + color.PURPLE + "Breakfast meals." + color.END)
+    print(" Press " + color.BOLD + color.GREEN + "2 " + color.END + "if " + color.BOLD + color.PURPLE + "Main courses." + color.END)
+    print(" Press " + color.BOLD + color.GREEN + "3 " + color.END + "if " + color.BOLD + color.PURPLE + "Desserts." + color.END)
+    print(" Press " + color.BOLD + color.GREEN + "4 " + color.END + "if " + color.BOLD + color.PURPLE + "Drinks." + color.END)
+    print(" Press " + color.BOLD + color.GREEN + "0 " + color.END + "to " + color.BOLD + color.PURPLE + "quit." + color.END)
+    category = input(" Please input here the number: ")
+    print(1 * "\n")
+
+    breakfastmeals = '1'
+    maincourses = '2'
+    desserts = '3'
+    drinks = '4'
+
+    if category == breakfastmeals or category == maincourses or category == drinks or category == desserts:
+        while category == breakfastmeals or category == maincourses or category == drinks or category == desserts:
+
+            while category == breakfastmeals or category == maincourses or category == drinks or category == desserts:
+
+                while category == breakfastmeals:
+                    print("You have chosen: " + color.BOLD + color.PURPLE + " Breakfast meals" + color.END)
+                    print("Here is the menu, kindly enter the number to get the order.")
+                    print(" 1. TAPA WITH RICE               ------------------------  ₱75.00 ")
+                    print(" 2. SAUSAGE WITH RICE            ------------------------  ₱80.00 ")
+                    print(" 3. PANCAKE                      ------------------------  ₱50.00 ")
+                    print(" 4. PANDESAL                     ------------------------- ₱45.00 ")
+                    print(" 5. GRILLED CHEESE SANDWICH      ------------------------- ₱45.00 ")
+                    print(" Press " + color.BOLD + color.GREEN + "0 " + color.END + "to change " + color.BOLD + color.PURPLE + "order" + color.END + ".")
+                    BreakfastOrder = int(input('Kindly enter your order here in Breakfast, if non, kindly enter 0: '))
+                    getBreakfastorder(BreakfastOrder)
+
+                    # selection
+                    print("\n")
+                    print(" If you want to add another order or get the receipt: ")
+                    print(" Press " + color.BOLD + color.GREEN + "1 " + color.END + "if " + color.BOLD + color.PURPLE + "Breakfast meals." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "2 " + color.END + "if " + color.BOLD + color.PURPLE + "Main courses." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "3 " + color.END + "if " + color.BOLD + color.PURPLE + "Desserts." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "4 " + color.END + "if " + color.BOLD + color.PURPLE + "Drinks." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "0 " + color.END + "to get the " + color.BOLD + color.PURPLE + "receipt" + color.END + ".")
+                    category = input(" Please input here your choice: ")
+
+                while category == maincourses:
+                    print("You have chosen: " + color.BOLD + color.PURPLE + " Main courses: " + color.END)
+                    print("Here is the menu, kindly enter the number to get the order.")
+                    print(" 1. SINIGANG                     ------------------------- ₱200.00 ")
+                    print(" 2. CHICKEN                      ------------------------- ₱250.00 ")
+                    print(" 3. BEEF STEAK                   ------------------------- ₱200.00 ")
+                    print(" 4. ADOBO                        ------------------------- ₱200.00 ")
+                    print(" 5. NILAGA                       ------------------------- ₱200.00 ")
+                    print(" 6. KARE-KARE                    ------------------------- ₱200.00 ")
+                    print(" Press " + color.BOLD + color.GREEN + "0 " + color.END + "to change " + color.BOLD + color.PURPLE + "order" + color.END + ".")
+                    MaincourseOrder = int(input('Kindly enter your order here in Maincourse meal, if non, kindly enter 0: '))
+                    getMaincourseOrder(MaincourseOrder)
+
+                    # selection
+                    print("\n")
+                    print(" If you want to add another order or get the receipt: ")
+                    print(" Press " + color.BOLD + color.GREEN + "1 " + color.END + "if " + color.BOLD + color.PURPLE + "Breakfast meals." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "2 " + color.END + "if " + color.BOLD + color.PURPLE + "Main courses." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "3 " + color.END + "if " + color.BOLD + color.PURPLE + "Desserts." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "4 " + color.END + "if " + color.BOLD + color.PURPLE + "Drinks." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "0 " + color.END + "to get the " + color.BOLD + color.PURPLE + "receipt" + color.END + ".")
+                    category = input(" Please input here your choice: ")
+                while category == desserts:
+                    print("You have chosen: " + color.BOLD + color.PURPLE + " Desserts: " + color.END)
+                    print("Here is the menu, kindly enter the number to get the order.")
+                    print(" 1. LECHE-FLAN                   ------------------------- ₱75.00 ")
+                    print(" 2. HALO-HALO                    ------------------------- ₱70.00 ")
+                    print(" 3. UBE HALAYA                   ------------------------- ₱70.00 ")
+                    print(" 4. SAPIN-SAPIN                  ------------------------- ₱65.00 ")
+                    print(" 5. TURON                        ------------------------- ₱60.00 ")
+                    print(" 6. BIBINGKA                     ------------------------- ₱60.00 ")
+                    print(" Press " + color.BOLD + color.GREEN + "0 " + color.END + "to change " + color.BOLD + color.PURPLE + "order" + color.END + ".")
+                    DessertOrder = int(input('Kindly enter your order here in Dessert menu, if non, kindly enter 0: '))
+                    getDessertOrder(DessertOrder)
+
+                    # selection
+                    print("\n")
+                    print(" If you want to add another order or get the receipt: ")
+                    print(" Press " + color.BOLD + color.GREEN + "1 " + color.END + "if " + color.BOLD + color.PURPLE + "Breakfast meals." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "2 " + color.END + "if " + color.BOLD + color.PURPLE + "Main courses." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "3 " + color.END + "if " + color.BOLD + color.PURPLE + "Desserts." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "4 " + color.END + "if " + color.BOLD + color.PURPLE + "Drinks." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "0 " + color.END + "to get the " + color.BOLD + color.PURPLE + "receipt" + color.END + ".")
+                    category = input(" Please input here the number: ")
+
+                while category == drinks:
+                    print("You have chosen: " + color.BOLD + color.PURPLE + " Drinks" + color.END)
+                    print("Here is the menu, kindly enter the number to get the order.")
+                    print(" 1. BUKO PANDAN JUICE            ------------------------- ₱80.00 ")
+                    print(" 2. MESTIZA                      ------------------------- ₱80.00 ")
+                    print(" 3. COFFEE LIQUER                ------------------------- ₱80.00 ")
+                    print(" 4. HOT CHOCOLATE                ------------------------- ₱80.00 ")
+                    print(" 5. MANGO SHAKE                  ------------------------- ₱80.00 ")
+                    print(" 6. COKE FLOAT                   ------------------------- ₱80.00 ")
+                    print(" 7. WATER                        ------------------------- ₱40.00 ")
+                    print(" Press " + color.BOLD + color.GREEN + "0 " + color.END + "to change " + color.BOLD + color.PURPLE + "order" + color.END + ".")
+
+                    DrinksOrder = int(input('Kindly enter your order here in Drinks menu, if non, kindly enter 0: '))
+                    getDrinksOrder(DrinksOrder)
+
+                    # selection
+                    print("\n")
+                    print(" If you want to add another order or get the receipt: ")
+                    print(" Press " + color.BOLD + color.GREEN + "1 " + color.END + "if " + color.BOLD + color.PURPLE + "Breakfast meals." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "2 " + color.END + "if " + color.BOLD + color.PURPLE + "Main courses." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "3 " + color.END + "if " + color.BOLD + color.PURPLE + "Desserts." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "4 " + color.END + "if " + color.BOLD + color.PURPLE + "Drinks." + color.END)
+                    print(" Press " + color.BOLD + color.GREEN + "0 " + color.END + "to get the " + color.BOLD + color.PURPLE + "receipt" + color.END + ".")
+                    category = input(" Please input here the number: ")
+        if totalbill != 0:
+            Receipt()
+
+
+def getBreakfastorder(BreakfastOrder):
+    if BreakfastOrder == 1:
+        order("\nTAPA WITH RICE               ------------------------  ₱75.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " tapa with rice" + color.END + ": "))
+        price = aTapa * amount
+
+    elif BreakfastOrder == 2:
+        order("\nSAUSAGE WITH RICE            ------------------------  ₱80.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Sausage" + color.END + ": "))
+        price = aSausage * amount
+    elif BreakfastOrder == 3:
+        order("\nPANCAKE                      ------------------------  ₱50.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Pancake" + color.END + ": "))
+        price = aPancake * amount
+    elif BreakfastOrder == 4:
+        order("\nPANDESAL                     ------------------------- ₱45.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Pandesal" + color.END + ": "))
+        price = aPandesal * amount
+    elif BreakfastOrder == 5:
+        order("\nGRILLED CHEESE SANDWICH      ------------------------- ₱45.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Grilled Cheese Sandwich" + color.END + ": "))
+        price = aGrilledcheese * amount
+    else:
+        price = 0
+    calculatetotalbill(price)
+
+
+def getMaincourseOrder(MaincourseOrder):
+    if MaincourseOrder == 1:
+        order("\nSINIGANG                     ------------------------- ₱200.00\n ")
+        amount = int(input("Please input the amount of your " + color.BOLD + color.RED + "Sinigang" + color.END + ": "))
+        price = bSinigang * amount
+
+    elif MaincourseOrder == 2:
+        order("\nCHICKEN                      ------------------------- ₱250.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Chicken" + color.END + ": "))
+        price = bChicken * amount
+    elif MaincourseOrder == 3:
+        order("\nBEEF STEAK                   ------------------------- ₱200.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Beef Steak" + color.END + ": "))
+        price = bBeefsteak * amount
+    elif MaincourseOrder == 4:
+        order("\nADOBO                        ------------------------- ₱200.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Adobo" + color.END + ": "))
+        price = bAdobo * amount
+    elif MaincourseOrder == 5:
+        order("\nNILAGA                       ------------------------- ₱200.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Nilaga" + color.END + ": "))
+        price = bNilaga * amount
+    elif MaincourseOrder == 6:
+        order("\nKARE-KARE                    ------------------------- ₱200.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Kare-Kare" + color.END + ": "))
+        price = bKareKare * amount
+
+    else:
+        price = 0
+    calculatetotalbill(price)
+
+
+def getDessertOrder(DessertOrder):
+    if DessertOrder == 1:
+        order("\nLECHE-FLAN                   ------------------------- ₱75.00\n ")
+        amount = int(input("Please input the amount of your " + color.BOLD + color.RED + "Leche-Flan" + color.END + ": "))
+        price = cLecheFlan * amount
+
+    elif DessertOrder == 2:
+        order("\nHALO-HALO                    ------------------------- ₱70.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Halo-Halo" + color.END + ": "))
+        price = cHaloHalo * amount
+    elif DessertOrder == 3:
+        order("\nUBE HALAYA                   ------------------------- ₱70.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Ube Halaya" + color.END + ": "))
+        price = cUbeHalaya * amount
+    elif DessertOrder == 4:
+        order("\nSAPIN-SAPIN                  ------------------------- ₱65.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Sapin-Sapin" + color.END + ": "))
+        price = cSapinSapin * amount
+    elif DessertOrder == 5:
+        order("\nTURON                        ------------------------- ₱60.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Turon" + color.END + ": "))
+        price = cTuron * amount
+    elif DessertOrder == 6:
+        order("\nBIBINGKA                     ------------------------- ₱60.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Bibingka" + color.END + ": "))
+        price = cBibingka * amount
+
+    else:
+        price = 0
+    calculatetotalbill(price)
+
+
+def getDrinksOrder(DrinksOrder):
+    if DrinksOrder == 1:
+        order("\nBUKO PANDAN JUICE            ------------------------- ₱80.00\n ")
+        amount = int(input("Please input the amount of your " + color.BOLD + color.RED + "Buko Pandan Juice" + color.END + ": "))
+        price = cLecheFlan * amount
+
+    elif DrinksOrder == 2:
+        order("\nMESTIZA                      ------------------------- ₱80.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Mestiza" + color.END + ": "))
+        price = dMestiza * amount
+    elif DrinksOrder == 3:
+        order("\nCOFFEE LIQUER                ------------------------- ₱80.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Coffee Liquer" + color.END + ": "))
+        price = dCoffeeLiquer * amount
+    elif DrinksOrder == 4:
+        order("\nHOT CHOCOLATE                ------------------------- ₱80.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Hot Chocolate" + color.END + ": "))
+        price = dHotChocolate * amount
+    elif DrinksOrder == 5:
+        order("\nMANGO SHAKE                  ------------------------- ₱80.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Mango Shake" + color.END + ": "))
+        price = dMangoShake * amount
+    elif DrinksOrder == 6:
+        order("\nCOKE FLOAT                   ------------------------- ₱80.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Coke Float" + color.END + ": "))
+        price = dCokeFloat * amount
+    elif DrinksOrder == 7:
+        order("\nWATER                        ------------------------- ₱40.00\n ")
+        amount = int(input("Please input the amount of your" + color.BOLD + color.RED + " Water" + color.END + ":  "))
+        price = dWater * amount
+
+    else:
+        price = 0
+    calculatetotalbill(price)
+
+
+if __name__ == "__main__":
+    choices()
+    if totalbill != 0:
+        print("-------------------------------------------------------------------")
+        print("total:                                             ₱" + str(printtotalbill()))
+        payment = float(input('Payment:                                           ₱'))
+
+        # if payment is less than the total bill
+        while payment < totalbill:
+            print("Your bill is not enough, please input the correct payment.")
+            payment = float(input("Kindly input your payment again: "))
+
+        change = payment - totalbill
+        formatted_float = "{:.2f}".format(change)
+        print('------------------------------------------------------------------')
+        print("change:                                            ₱" + str(formatted_float))
+        ('------------------------------------------------------------------')
+        print("         Date and Time: ", dt_string)
+        print(1*"\n")
+        print('''        Get your 10th Sumbrero free! 
+        Join our Frequent Hot Chocolate Club online.''')
+        print('------------------------------------------------------------------')
+        
+        
+        
+ 
+
+
+    else:
+        goodbye()
+        comebackagaintoFILIDISH()
